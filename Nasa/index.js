@@ -4,7 +4,7 @@ async function nasa() {
       "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
     );
 
-    // console.log("API Response:", response);
+    console.log(response);
 
     if (!response.ok) {
       throw new Error("RESPONSE ERROR");
@@ -12,7 +12,7 @@ async function nasa() {
 
     const data = await response.json();
 
-    //console.log("API Data:", data);
+    console.log("API Data:", data);
 
     // Get the photos array from the response data
     // I looked at the console

@@ -1,12 +1,15 @@
+console.clear();
 const url = "https://api.quotable.io/random";
 
 async function getRandomQuotes() {
   try {
     const response = await fetch(url);
+    console.log(response);
     if (!response.ok) {
       throw new Error("NETWORK RESPONSE ERROR");
     }
     const data = await response.json();
+    console.log(data);
     quotes(data);
   } catch (error) {
     console.error("FETCH ERROR:", error);
@@ -19,7 +22,7 @@ function quotes(data) {
 
   //select the div from html using data-js
   const quoteContainer = document.createElement("div");
-  quoteContainer.innerHTML = ""; //This is to clear the previous quote
+  //quoteContainer.innerHTML = ""; //This is to clear the previous quote
   //quoteContainer.style.backgroundColor = "bisque";
   quoteContainer.style.display = "grid";
   quoteContainer.style.justifyContent = "center";
